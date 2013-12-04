@@ -51,6 +51,7 @@ h2 {
 .date_and_hours {
 	overflow: hidden;
 	padding: 2em 2em 1.2em 2em;
+	color: #1D5886;
 }
 .date {
 	float: left;
