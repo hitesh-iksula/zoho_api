@@ -18,10 +18,11 @@ body {
 .projects {
 	width: 50em;
 	margin-left: 2em;
+	margin-top: 1.2em;
 }
 .project {
 	margin-bottom: 1em;
-	border-radius: 0 0 8px 8px;
+	border-radius: 8px;
 	border-bottom: 2px solid #999;
 	box-shadow: 0px 0px 14px #CCC;
 }
@@ -37,6 +38,7 @@ h2 {
 }
 .project_name {
 	background: #E2E2E2;
+	border-radius: 8px 8px 0 0;
 }
 .project_member {
 	background: #1D5886;
