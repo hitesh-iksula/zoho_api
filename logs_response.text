@@ -1,0 +1,183 @@
+Array
+(
+    [result] => Array
+        (
+            [TimeLogDetails] => Array
+                (
+                    [0] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 5.54
+                                    [logdate] => 29-11-2013 06:53 PM
+                                    [lognotes] => timesheet log : start time -29-11-2013 06:53 PM end time 29-11-2013 07:21 PM time spent - 0.28
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Make entire product box clickable
+                                    [taskbilling] => Billable
+                                    [loghours] => 0.28
+                                    [task_id] => e1bbda3d5fbf17929278e43f67a7fad4583c566f3625e7d9
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf1792650259a64f985ed481a4b8fb1b369072
+                                )
+
+                        )
+
+                    [1] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 5.54
+                                    [logdate] => 29-11-2013 01:06 PM
+                                    [lognotes] => timesheet log : start time -29-11-2013 01:06 PM end time 29-11-2013 06:33 PM time spent - 5.26
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Match the width of the footer with the width of the page. Make the handle of the footer outside the right periphery of the page
+                                    [taskbilling] => Billable
+                                    [loghours] => 5.26
+                                    [task_id] => e1bbda3d5fbf17929278e43f67a7fad461dbcaf447b2f163
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf1792650259a64f985ed4c4cb5e2f0cbd7495
+                                )
+
+                        )
+
+                    [2] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 5.54
+                                    [logdate] => 29-11-2013 12:31 PM
+                                    [lognotes] => timesheet log : start time -29-11-2013 12:31 PM end time 29-11-2013 12:31 PM time spent - 0.00
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Product Page
+                                    [taskbilling] => Billable
+                                    [loghours] => 0.00
+                                    [task_id] => e1bbda3d5fbf17927ce25fa0b79c8d0e0873c4983b70ef9c
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf179269b909e07bd1e6c832b0f6b53ff468b5
+                                )
+
+                        )
+
+                    [3] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 9.5
+                                    [logdate] => 28-11-2013 09:47 AM
+                                    [lognotes] => timesheet log : start time -28-11-2013 09:47 AM end time 28-11-2013 06:52 PM time spent - 9.05
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Testing
+                                    [taskbilling] => Billable
+                                    [loghours] => 9.05
+                                    [task_id] => e1bbda3d5fbf1792b7811978792ce0cf2ccf2d6b1ab5fd20
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf1792c4f3ca1f6c65fd98a0c71d90e2192c2c
+                                )
+
+                        )
+
+                    [4] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 8.18
+                                    [logdate] => 27-11-2013 06:47 PM
+                                    [lognotes] => timesheet log : start time -27-11-2013 06:47 PM end time 27-11-2013 11:46 PM time spent - 4.58
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Testing
+                                    [taskbilling] => Billable
+                                    [loghours] => 4.58
+                                    [task_id] => e1bbda3d5fbf1792b7811978792ce0cf2ccf2d6b1ab5fd20
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf17926f22e03bd7180badd40aad95b4600d90
+                                )
+
+                        )
+
+                    [5] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 8.18
+                                    [logdate] => 27-11-2013 12:51 PM
+                                    [lognotes] => timesheet log : start time -27-11-2013 12:51 PM end time 27-11-2013 01:37 PM time spent - 0.46
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Homepage
+                                    [taskbilling] => Billable
+                                    [loghours] => 0.46
+                                    [task_id] => e1bbda3d5fbf17927ce25fa0b79c8d0e6755b1c1035e80e0
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf1792af2ba82410698699583c566f3625e7d9
+                                )
+
+                        )
+
+                    [6] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 8.18
+                                    [logdate] => 27-11-2013 10:17 AM
+                                    [lognotes] => timesheet log : start time -27-11-2013 10:17 AM end time 27-11-2013 12:51 PM time spent - 2.34
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Post Development
+                                    [taskbilling] => Billable
+                                    [loghours] => 2.34
+                                    [task_id] => e1bbda3d5fbf17927ce25fa0b79c8d0e22383dd80c49acf1
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf1792af2ba824106986992639b829299dd4f1
+                                )
+
+                        )
+
+                    [7] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 9.20
+                                    [logdate] => 26-11-2013 10:03 AM
+                                    [lognotes] => timesheet log : start time -26-11-2013 10:03 AM end time 26-11-2013 07:23 PM time spent - 9.20
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Testing
+                                    [taskbilling] => Billable
+                                    [loghours] => 9.20
+                                    [task_id] => e1bbda3d5fbf1792b7811978792ce0cf2ccf2d6b1ab5fd20
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf179207ce0e3ebdef919932b0f6b53ff468b5
+                                )
+
+                        )
+
+                    [8] => SimpleXMLElement Object
+                        (
+                            [TimeLogDetail] => SimpleXMLElement Object
+                                (
+                                    [total_loghours_perday] => 8.55
+                                    [logdate] => 25-11-2013 10:34 AM
+                                    [lognotes] => timesheet log : start time -25-11-2013 10:34 AM end time 25-11-2013 07:29 PM time spent - 8.55
+                                    [loginname] => Hitesh Pachpor
+                                    [task] => Homepage
+                                    [taskbilling] => Billable
+                                    [loghours] => 8.55
+                                    [task_id] => e1bbda3d5fbf17927ce25fa0b79c8d0e6755b1c1035e80e0
+                                    [total_loghours] => 41.32
+                                    [login_uid] => ac0ae61dfafb60edb2cb84e94a5990d8
+                                    [tlog_id] => e1bbda3d5fbf179244966055c562a49cd84883e1add4138c
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [uri] => /api/private/xml/logs
+)
