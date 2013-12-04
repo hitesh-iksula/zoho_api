@@ -21,7 +21,9 @@ body {
 }
 .project {
 	margin-bottom: 1em;
-	padding-bottom: 1em;
+	border-radius: 0 0 8px 8px;
+	border-bottom: 2px solid #999;
+	box-shadow: 0px 0px 14px #CCC;
 }
 h1, h2 {
 	line-height: 1.6em;
@@ -34,7 +36,7 @@ h2 {
 	padding: 0.2em 0;
 }
 .project_name {
-	background: #DDD;
+	background: #E2E2E2;
 }
 .project_member {
 	background: #1D5886;
@@ -48,7 +50,7 @@ h2 {
 }
 .date_and_hours {
 	overflow: hidden;
-	padding: 2em;
+	padding: 2em 2em 1.2em 2em;
 }
 .date {
 	float: left;
@@ -65,7 +67,10 @@ h2 {
 }
 .task_list {
 	border-top: 1px solid #999;
-	border-bottom: 1px solid #999;
+	margin-bottom: 0.5em;
+}
+.task_list + .date_and_hours {
+	border-top: 2px solid #999;
 }
 .task_row {
 	overflow: hidden;
@@ -74,7 +79,8 @@ h2 {
 	position: relative;
 }
 .task_row:not(.heading):hover {
-	background: #F3F3F3;
+	background: #F5F5F5;
+	cursor: pointer;
 }
 .heading {
 	font-weight: 600;

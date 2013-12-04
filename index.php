@@ -50,7 +50,7 @@ foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 	$logsData = $logsObject->getFormattedResponse();
 
 	if($logsData != 'No tasks found') {
-		$project['tasks'] = current($logsData);
+		$project['tasks'] = $logsData;
 		$projects[] = $project;
 	}
 
@@ -81,25 +81,29 @@ foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 						<h2><?php echo 'Hitesh Pachpor'; ?></h2>
 					</div>
 
-					<?php $tasks = $project['tasks']; ?>
-					<div class="pad_left date_and_hours">
-						<div class="date">Date: <span><?php echo $tasks['date']; ?></span></div>
-						<div class="total_hrs">Total Hours of Work Done: <span><?php echo str_replace(".", ":", $tasks['total_loghours_perday']); ?></span></div>
-					</div>
+					<?php $days = $project['tasks']; ?>
+					<?php foreach($days as $tasks): ?>
 
-					<div class="task_list">
-						<div class="task_row heading">
-							<div class="task">Task</div>
-							<div class="loghours">Hours</div>
+						<div class="pad_left date_and_hours">
+							<div class="date">Date: <span><?php echo $tasks['date']; ?></span></div>
+							<div class="total_hrs">Total Hours of Work Done: <span><?php echo str_replace(".", ":", $tasks['total_loghours_perday']); ?></span></div>
 						</div>
-						<?php foreach($tasks['tasks'] as $task): ?>
-							<div class="task_row">
-								<div class="arrow_right"></div>
-								<div class="task"><?php echo $task['task']; ?></div>
-								<div class="loghours"><?php echo str_replace(".", ":", $task['loghours']); ?></div>
+
+						<div class="task_list">
+							<div class="task_row heading">
+								<div class="task">Task</div>
+								<div class="loghours">Hours</div>
 							</div>
-						<?php endforeach; ?>
-					</div>
+							<?php foreach($tasks['tasks'] as $task): ?>
+								<div class="task_row">
+									<div class="arrow_right"></div>
+									<div class="task"><?php echo $task['task']; ?></div>
+									<div class="loghours"><?php echo str_replace(".", ":", $task['loghours']); ?></div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+
+					<?php endforeach; ?>
 				
 				</div>
 
