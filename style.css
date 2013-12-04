@@ -1,0 +1,107 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address,
+big, cite, code, del, dfn, em, font, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup,
+tt, var, dl, dt, dd, ul, li, fieldset, form,
+label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 16px/1.6em 'Raleway', sans-serif;
+	color: #333;
+	background-color: #FBFBFB;
+}
+.projects {
+	width: 50em;
+	margin-left: 2em;
+}
+.project {
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+}
+h1, h2 {
+	line-height: 1.6em;
+}
+h1 {
+	font-size: 2.4em;
+	padding: 0.4em 0;
+}
+h2 {
+	padding: 0.2em 0;
+}
+.project_name {
+	background: #DDD;
+}
+.project_member {
+	background: #1D5886;
+	color: #FEFEFE;
+}
+.pad_left {
+	padding-left: 2em;
+}
+.bottom_border {
+	border-bottom: 1px solid #999;
+}
+.date_and_hours {
+	overflow: hidden;
+	padding: 2em;
+}
+.date {
+	float: left;
+}
+.total_hrs {
+	float: right;
+}
+.date, .total_hrs {
+	font-weight: 600;
+}
+.date span, .total_hrs span {
+	font-size: 1.6em;
+	padding: 0 0 0 0.5em;
+}
+.task_list {
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+.task_row {
+	overflow: hidden;
+	padding: 0.4em 2em;
+	border-top: 1px solid #DDD;
+	position: relative;
+}
+.task_row:not(.heading):hover {
+	background: #F3F3F3;
+}
+.heading {
+	font-weight: 600;
+	border-bottom: 1px solid #999;
+	border-top: none;
+	background: #EEE;
+}
+.heading + .task_row {
+	border-top: none;
+}
+.task {
+	float: left;
+	width: 88%;
+}
+.loghours {
+	float: right;
+	width: 11%;
+	font-size: 1.1em;
+	font-weight: 600;
+	color: #444;
+	text-align: right;
+}
+.arrow_right {
+	position: absolute;
+	top: 0.8em;
+	left: 0.8em;
+	border-left: 0.6em solid #666;
+	border-top: 0.4em solid transparent;
+	border-bottom: 0.4em solid transparent;
+}

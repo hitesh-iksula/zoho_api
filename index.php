@@ -1,14 +1,10 @@
-<pre>
-
 <?php require_once('classes.php'); ?>
 
 <?php
 
 $client    = 'iksulapmt';
-$time      = 'lastweek';
+$time      = 'yesterday';
 
-// Hitesh Pachpor & Happily Unmarried
-// $projectId = 'e1bbda3d5fbf17921dad61706403a9e261dbcaf447b2f163';
 $authtoken = 'ef57228bf54d70f3ba88fb0f0e7f5cd1';
 
 $params = array(
@@ -28,15 +24,16 @@ $projectsData = $projectsObject->getResponse();
 
 ?>
 
-<?php // print_r($projectsData); ?>
-
 <?php
+
+$projects = array();
 
 foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 	$helper = new Formatting_Helper();
 	$project = $helper->getArrayFromXmlObject($object->ProjectDetail);
 
-	echo "<h2>" . $project['project_name'] . "</h2>";
+	// echo "<h2>" . $project['project_name'] . "</h2>";
+	// print_r($project);
 
 	$projectId = $project['project_id'];
 	$params = array(
@@ -55,39 +52,62 @@ foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 
 	$logsData = $logsObject->getFormattedResponse();
 
-	print_r($logsData);
+	// print_r($logsData);
+	if($logsData != 'No tasks found') {
+		$project['tasks'] = current($logsData);
+		$projects[] = $project;
+	}
 
 }
 
 ?>
 
-<?php
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css"/>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
 
-// exit;
-// Mihir Bhende & SportXs
-/*$projectId = 'e1bbda3d5fbf17921dad61706403a9e2c4cb5e2f0cbd7495';
-$authtoken = 'c6996e7813bdd9dc8f337ab8b21e9b71';*/
+		<div class="projects">
 
-// Satyendra Mishra & SonicSense
-/*$projectId = 'e1bbda3d5fbf179216c156d53d3ca05557c6a6bbf93694ff';
-$authtoken = '8565da793c5af305635ffa77200bb8d8';*/
+			<?php foreach($projects as $project): ?>
 
-/*$params = array(
-	'projId' => $projectId,
-	'view' => $time
-);
+				<div class="project">
+					
+					<div class="pad_left project_name">
+						<h1><?php echo $project['project_name'] ?></h1>
+					</div>
+					<div class="pad_left project_member">
+						<h2><?php echo 'Hitesh Pachpor' ?></h2>
+					</div>
 
-$logsObject = new Zoho_Log_Retriever();
+					<?php $tasks = $project['tasks']; ?>
+					<div class="pad_left date_and_hours">
+						<div class="date">Date: <span><?php echo $tasks['date'] ?></span></div>
+						<div class="total_hrs">Total Hours of Work Done: <span><?php echo $tasks['total_loghours_perday'] ?></span></div>
+					</div>
 
-$logsObject->setClient($client);
-$logsObject->setProjectId($projectId); // specific
-$logsObject->setAuthToken($authtoken);
-$logsObject->setApiType('logs');
-$logsObject->setTimePeriod($time); // specific
-$logsObject->setParams($params);
+					<div class="task_list">
+						<div class="task_row heading">
+							<div class="task">Task</div>
+							<div class="loghours">Hours</div>
+						</div>
+						<?php foreach($tasks['tasks'] as $task): ?>
+							<div class="task_row">
+								<div class="arrow_right"></div>
+								<div class="task"><?php echo $task['task'] ?></div>
+								<div class="loghours"><?php echo $task['loghours'] ?></div>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				
+				</div>
 
-$logsData = $logsObject->getFormattedResponse();*/
+			<?php endforeach; ?>
 
-?>
+		</div>
 
-<!-- <pre><?php // print_r($logsData); ?></pre> -->
+	</body>
+</html>
