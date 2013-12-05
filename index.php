@@ -1,4 +1,5 @@
 <?php require_once('classes.php'); ?>
+<?php require_once('users.php'); ?>
 
 <?php
 
@@ -12,61 +13,31 @@ $timeLabel = array(
 	'yesterday'  => 'Yesterday'
 );
 
-$authtoken = 'ef57228bf54d70f3ba88fb0f0e7f5cd1';
-
-$params = array(
-	'auditIndex' => '1',
-	'range'      => '60',
-	'status'     => 'active'
-);
-
-$projectsObject = new Zoho_API_Call();
-
-$projectsObject->setClient($client);
-$projectsObject->setAuthToken($authtoken);
-$projectsObject->setApiType('projects');
-$projectsObject->setParams($params);
-
-$projectsData = $projectsObject->getResponse();
-
-?>
-
-<?php
-
 $projects = array();
 
-if($projectsData['result']['ProjectDetails']['ProjectDetail']) {
+foreach($users as $user) {
 
-	$helper = new Formatting_Helper();
-	$project = $projectsData['result']['ProjectDetails']['ProjectDetail'];
+	$authtoken = $user['authToken'];
 
-	$projectId = $project['project_id'];
 	$params = array(
-		'projId' => $projectId,
-		'view' => $time
+		'auditIndex' => '1',
+		'range'      => '60',
+		'status'     => 'active'
 	);
 
-	$logsObject = new Zoho_Log_Retriever();
+	$projectsObject = new Zoho_API_Call();
 
-	$logsObject->setClient($client);
-	$logsObject->setProjectId($projectId); // specific
-	$logsObject->setAuthToken($authtoken);
-	$logsObject->setApiType('logs');
-	$logsObject->setTimePeriod($time); // specific
-	$logsObject->setParams($params);
+	$projectsObject->setClient($client);
+	$projectsObject->setAuthToken($authtoken);
+	$projectsObject->setApiType('projects');
+	$projectsObject->setParams($params);
 
-	$logsData = $logsObject->getFormattedResponse();
+	$projectsData = $projectsObject->getResponse();
 
-	if($logsData != 'No tasks found') {
-		$project['tasks'] = $logsData;
-		$projects[] = $project;
-	}
+	if($projectsData['result']['ProjectDetails']['ProjectDetail']) {
 
-} else {
-
-	foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 		$helper = new Formatting_Helper();
-		$project = $helper->getArrayFromXmlObject($object->ProjectDetail);
+		$project = $projectsData['result']['ProjectDetails']['ProjectDetail'];
 
 		$projectId = $project['project_id'];
 		$params = array(
@@ -87,12 +58,45 @@ if($projectsData['result']['ProjectDetails']['ProjectDetail']) {
 
 		if($logsData != 'No tasks found') {
 			$project['tasks'] = $logsData;
+			$project['user'] = $user;
 			$projects[] = $project;
+		}
+
+	} else {
+
+		foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
+			$helper = new Formatting_Helper();
+			$project = $helper->getArrayFromXmlObject($object->ProjectDetail);
+
+			$projectId = $project['project_id'];
+			$params = array(
+				'projId' => $projectId,
+				'view' => $time
+			);
+
+			$logsObject = new Zoho_Log_Retriever();
+
+			$logsObject->setClient($client);
+			$logsObject->setProjectId($projectId); // specific
+			$logsObject->setAuthToken($authtoken);
+			$logsObject->setApiType('logs');
+			$logsObject->setTimePeriod($time); // specific
+			$logsObject->setParams($params);
+
+			$logsData = $logsObject->getFormattedResponse();
+
+			if($logsData != 'No tasks found') {
+				$project['tasks'] = $logsData;
+				$project['user'] = $user;
+				$projects[] = $project;
+			}
+
 		}
 
 	}
 
 }
+
 
 
 ?>
@@ -120,7 +124,7 @@ if($projectsData['result']['ProjectDetails']['ProjectDetail']) {
 						<h2><?php echo 'Daily Status Report for '; ?><span><?php echo $timeLabel[$time]; ?></span></h2>
 					</div>
 					<div class="pad_left project_member">
-						<h2><?php echo 'Hitesh Pachpor'; ?></h2>
+						<h2><?php echo $project['user']['username']; ?></h2>
 					</div>
 
 					<?php $days = $project['tasks']; ?>
