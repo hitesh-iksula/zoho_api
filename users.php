@@ -18,8 +18,16 @@ $users = array(
 		'authToken' => '7ebcda034222d0d6ce863e43a48ddb50'
 	),
 	array(
+		'username'  => 'Kishan Rajdev',
+		'authToken' => '58e8a42b9f82466f2cf238de3f0d6681'
+	),
+	array(
 		'username'  => 'Rushit Dawda',
 		'authToken' => 'f0e71b71d9d7a043ce261e271fc5dc7f'
+	),
+	array(
+		'username'  => 'Satyendra Mishra',
+		'authToken' => '8565da793c5af305635ffa77200bb8d8'
 	),
 	array(
 		'username'  => 'Anuj Sharma',

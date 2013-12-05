@@ -4,7 +4,7 @@
 <?php
 
 $client    = 'iksulapmt';
-$time      = 'thisweek';
+$time      = 'yesterday';
 $timeLabel = array(
 	'thisweek'   => 'This Week',
 	'lastweek'   => 'Last Week',
@@ -144,7 +144,12 @@ foreach($users as $user) {
 
 								<div class="pad_left date_and_hours">
 									<div class="date">Date: <span><?php echo $tasks['date']; ?></span></div>
-									<div class="total_hrs">Total Hours of Work Done: <span><?php echo str_replace(".", ":", $tasks['total_loghours_perday']); ?></span></div>
+									<?php
+									$totalHours = explode(".", $tasks['total_loghours_perday']);
+									$totalHours[1] = sprintf("%02s", $totalHours[1]);
+									$totalHours = implode(":", $totalHours);
+									?>
+									<div class="total_hrs">Total Hours of Work Done: <span><?php echo $totalHours; ?></span></div>
 								</div>
 
 								<div class="task_list">

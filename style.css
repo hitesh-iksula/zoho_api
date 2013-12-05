@@ -31,7 +31,7 @@ h1, h2 {
 	color: #FEFEFE;
 }
 h1 {
-	font-size: 2.4em;
+	font-size: 2em;
 	padding: 0.4em 0;
 }
 h2 {
@@ -52,7 +52,7 @@ h2 {
 }
 .sheet_type {
 	background: #248312;
-	padding: 0.6em 2em;
+	padding: 0.4em 2em;
 }
 .sheet_type h2 {
 	font-weight: 300;
@@ -149,8 +149,8 @@ h2 {
 .project_name i {
     position: absolute;
     top: 0.7em;
-    right: 0.7em;
-    font-size: 2.5em;
+    right: 1.1em;
+    font-size: 2em;
     color: #FEFEFE;
 }
 .project_name .fa-sort-amount-asc {
