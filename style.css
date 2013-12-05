@@ -41,6 +41,14 @@ h2 {
 	background: #424242;
 	border-radius: 6px 6px 0 0;
 	text-shadow: 2px 2px 4px #222;
+	position: relative;
+	cursor: pointer;
+}
+.project.closed .project_name {
+	border-radius: 6px;
+}
+.project_info {
+	display: none;
 }
 .sheet_type {
 	background: #248312;
@@ -137,4 +145,20 @@ h2 {
 .task_row:not(.heading):hover .arrow_right {
 	left: 1.65em;
 	border-left: 0.6em solid #444;
+}
+.project_name i {
+    position: absolute;
+    top: 0.7em;
+    right: 0.7em;
+    font-size: 2.5em;
+    color: #FEFEFE;
+}
+.project_name .fa-sort-amount-asc {
+	display: none;
+}
+.project_name:hover .fa-sort-amount-asc {
+	display: block;
+}
+.project_name:hover .fa-bars {
+	display: none;
 }
