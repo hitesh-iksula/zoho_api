@@ -47,7 +47,7 @@ h2 {
 .project.closed .project_name {
 	border-radius: 6px;
 }
-.project_info {
+.project.closed .project_info {
 	display: none;
 }
 .sheet_type {
@@ -156,9 +156,9 @@ h2 {
 .project_name .fa-sort-amount-asc {
 	display: none;
 }
-.project_name:hover .fa-sort-amount-asc {
+.project:not(.closed) .fa-sort-amount-asc, .project_name:hover .fa-sort-amount-asc {
 	display: block;
 }
-.project_name:hover .fa-bars {
+.project:not(.closed) .fa-bars, .project_name:hover .fa-bars {
 	display: none;
 }

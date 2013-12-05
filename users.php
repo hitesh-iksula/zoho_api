@@ -1,7 +1,7 @@
 <?php
 
 $users = array(
-	/*array(
+	array(
 		'username'  => 'Hitesh Pachpor',
 		'authToken' => 'ef57228bf54d70f3ba88fb0f0e7f5cd1'
 	),
@@ -28,12 +28,12 @@ $users = array(
 	array(
 		'username'  => 'Moiz Kanchwala',
 		'authToken' => '3e22af61ddff4bc449392bf9f04c8079'
-	),*/
+	),
 	array(
 		'username'  => 'Ramakant Prabhutendolkar',
 		'authToken' => '1fa4d967871212034c3f5fe7ffc19ba5'
 	),
-	/*array(
+	array(
 		'username'  => 'Nilesh Yadav',
 		'authToken' => 'd536d72025fa9cf1096616af1422ed41'
 	),
@@ -44,7 +44,7 @@ $users = array(
 	array(
 		'username'  => 'Pravin Solanki',
 		'authToken' => '9e6b78d99da06320b61485e6936f2613'
-	),*/
+	),
 );
 
 ?>
