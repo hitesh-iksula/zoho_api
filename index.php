@@ -35,9 +35,10 @@ $projectsData = $projectsObject->getResponse();
 
 $projects = array();
 
-foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
+if($projectsData['result']['ProjectDetails']['ProjectDetail']) {
+
 	$helper = new Formatting_Helper();
-	$project = $helper->getArrayFromXmlObject($object->ProjectDetail);
+	$project = $projectsData['result']['ProjectDetails']['ProjectDetail'];
 
 	$projectId = $project['project_id'];
 	$params = array(
@@ -61,7 +62,38 @@ foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 		$projects[] = $project;
 	}
 
+} else {
+
+	foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
+		$helper = new Formatting_Helper();
+		$project = $helper->getArrayFromXmlObject($object->ProjectDetail);
+
+		$projectId = $project['project_id'];
+		$params = array(
+			'projId' => $projectId,
+			'view' => $time
+		);
+
+		$logsObject = new Zoho_Log_Retriever();
+
+		$logsObject->setClient($client);
+		$logsObject->setProjectId($projectId); // specific
+		$logsObject->setAuthToken($authtoken);
+		$logsObject->setApiType('logs');
+		$logsObject->setTimePeriod($time); // specific
+		$logsObject->setParams($params);
+
+		$logsData = $logsObject->getFormattedResponse();
+
+		if($logsData != 'No tasks found') {
+			$project['tasks'] = $logsData;
+			$projects[] = $project;
+		}
+
+	}
+
 }
+
 
 ?>
 
