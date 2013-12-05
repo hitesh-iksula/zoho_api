@@ -57,9 +57,10 @@ foreach($users as $user) {
 		$logsData = $logsObject->getFormattedResponse();
 
 		if($logsData != 'No tasks found') {
-			$project['tasks'] = $logsData;
-			$project['user'] = $user;
-			$projects[] = $project;
+			$userData['tasks'] = $logsData;
+			$userData['user'] = $user;
+			$projects[$projectId]['project_info'] = $project;
+			$projects[$projectId]['users'][$authtoken] = $userData;
 		}
 
 	} else {
@@ -86,9 +87,10 @@ foreach($users as $user) {
 			$logsData = $logsObject->getFormattedResponse();
 
 			if($logsData != 'No tasks found') {
-				$project['tasks'] = $logsData;
-				$project['user'] = $user;
-				$projects[] = $project;
+				$userData['tasks'] = $logsData;
+				$userData['user'] = $user;
+				$projects[$projectId]['project_info'] = $project;
+				$projects[$projectId]['users'][$authtoken] = $userData;
 			}
 
 		}
@@ -97,9 +99,9 @@ foreach($users as $user) {
 
 }
 
-
-
 ?>
+
+<pre><?php // print_r($projects); ?></pre>
 
 <!doctype html>
 <html>
@@ -118,36 +120,42 @@ foreach($users as $user) {
 				<div class="project">
 					
 					<div class="pad_left project_name">
-						<h1><?php echo $project['project_name']; ?></h1>
+						<h1><?php echo $project['project_info']['project_name']; ?></h1>
 					</div>
 					<div class="pad_left sheet_type">
 						<h2><?php echo 'Daily Status Report for '; ?><span><?php echo $timeLabel[$time]; ?></span></h2>
 					</div>
-					<div class="pad_left project_member">
-						<h2><?php echo $project['user']['username']; ?></h2>
-					</div>
 
-					<?php $days = $project['tasks']; ?>
-					<?php foreach($days as $tasks): ?>
 
-						<div class="pad_left date_and_hours">
-							<div class="date">Date: <span><?php echo $tasks['date']; ?></span></div>
-							<div class="total_hrs">Total Hours of Work Done: <span><?php echo str_replace(".", ":", $tasks['total_loghours_perday']); ?></span></div>
+					<?php foreach($project['users'] as $user): ?>
+
+						<div class="pad_left project_member">
+							<h2><?php echo $user['user']['username']; ?></h2>
 						</div>
 
-						<div class="task_list">
-							<div class="task_row heading">
-								<div class="task">Task</div>
-								<div class="loghours">Hours</div>
+						<?php $days = $user['tasks']; ?>
+						<?php foreach($days as $tasks): ?>
+
+							<div class="pad_left date_and_hours">
+								<div class="date">Date: <span><?php echo $tasks['date']; ?></span></div>
+								<div class="total_hrs">Total Hours of Work Done: <span><?php echo str_replace(".", ":", $tasks['total_loghours_perday']); ?></span></div>
 							</div>
-							<?php foreach($tasks['tasks'] as $task): ?>
-								<div class="task_row">
-									<div class="arrow_right"></div>
-									<div class="task"><?php echo $task['task']; ?></div>
-									<div class="loghours"><?php echo str_replace(".", ":", $task['loghours']); ?></div>
+
+							<div class="task_list">
+								<div class="task_row heading">
+									<div class="task">Task</div>
+									<div class="loghours">Hours</div>
 								</div>
-							<?php endforeach; ?>
-						</div>
+								<?php foreach($tasks['tasks'] as $task): ?>
+									<div class="task_row">
+										<div class="arrow_right"></div>
+										<div class="task"><?php echo $task['task']; ?></div>
+										<div class="loghours"><?php echo str_replace(".", ":", $task['loghours']); ?></div>
+									</div>
+								<?php endforeach; ?>
+							</div>
+
+						<?php endforeach; ?>
 
 					<?php endforeach; ?>
 				
