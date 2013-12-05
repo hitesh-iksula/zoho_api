@@ -77,6 +77,9 @@ foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 					<div class="pad_left project_name">
 						<h1><?php echo $project['project_name']; ?></h1>
 					</div>
+					<div class="pad_left sheet_type">
+						<h2><?php echo 'Daily Status Report'; ?></h2>
+					</div>
 					<div class="pad_left project_member">
 						<h2><?php echo 'Hitesh Pachpor'; ?></h2>
 					</div>

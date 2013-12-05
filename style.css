@@ -28,21 +28,26 @@ body {
 }
 h1, h2 {
 	line-height: 1.6em;
+	color: #FEFEFE;
 }
 h1 {
 	font-size: 2.4em;
 	padding: 0.4em 0;
 }
 h2 {
-	padding: 0.2em 0;
+	padding: 0.3em 0;
 }
 .project_name {
-	background: #E2E2E2;
+	background: #424242;
 	border-radius: 8px 8px 0 0;
 }
+.sheet_type {
+	background: #1F8F0A;
+	padding: 0.6em 2em;
+}
 .project_member {
-	background: #1D5886;
-	color: #FEFEFE;
+	background: #60B867;
+	border-bottom: 3px solid #319639;
 }
 .pad_left {
 	padding-left: 2em;
