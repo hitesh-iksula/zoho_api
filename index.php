@@ -3,7 +3,7 @@
 <?php
 
 $client    = 'iksulapmt';
-$time      = 'lastmonth';
+$time      = 'thisweek';
 
 $authtoken = 'ef57228bf54d70f3ba88fb0f0e7f5cd1';
 
