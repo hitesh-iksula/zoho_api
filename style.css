@@ -37,8 +37,8 @@ h1 {
 h2 {
 	padding: 0.3em 0;
 }
-.project_name {
-	background: #424242;
+.project .project_name {
+	background: #303030;
 	border-radius: 6px 6px 0 0;
 	text-shadow: 2px 2px 4px #222;
 	position: relative;
@@ -46,6 +46,10 @@ h2 {
 }
 .project.closed .project_name {
 	border-radius: 6px;
+	background: #424242;
+}
+.project .project_name:hover {
+	background: #303030;
 }
 .project.closed .project_info {
 	display: none;
