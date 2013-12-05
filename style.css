@@ -22,7 +22,7 @@ body {
 }
 .project {
 	margin-bottom: 1em;
-	border-radius: 8px;
+	border-radius: 6px;
 	border-bottom: 2px solid #999;
 	box-shadow: 0px 0px 14px #CCC;
 }
@@ -39,11 +39,18 @@ h2 {
 }
 .project_name {
 	background: #424242;
-	border-radius: 8px 8px 0 0;
+	border-radius: 6px 6px 0 0;
+	text-shadow: 2px 2px 4px #222;
 }
 .sheet_type {
-	background: #1F8F0A;
+	background: #248312;
 	padding: 0.6em 2em;
+}
+.sheet_type h2 {
+	font-weight: 300;
+}
+.sheet_type h2 span {
+	font-weight: 600;
 }
 .project_member {
 	background: #60B867;
@@ -79,6 +86,9 @@ h2 {
 }
 .task_list + .date_and_hours {
 	border-top: 2px solid #999;
+}
+.task_list + .project_member {
+	margin-top: 3em;
 }
 .task_row {
 	overflow: hidden;

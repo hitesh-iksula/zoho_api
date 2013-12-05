@@ -4,6 +4,13 @@
 
 $client    = 'iksulapmt';
 $time      = 'thisweek';
+$timeLabel = array(
+	'thisweek'   => 'This Week',
+	'lastweek'   => 'Last Week',
+	'thismonth'  => 'This Month',
+	'lastmonth'  => 'Last Month',
+	'yesterday'  => 'Yesterday'
+);
 
 $authtoken = 'ef57228bf54d70f3ba88fb0f0e7f5cd1';
 
@@ -78,7 +85,7 @@ foreach ($projectsData['result']['ProjectDetails'] as $index => $object) {
 						<h1><?php echo $project['project_name']; ?></h1>
 					</div>
 					<div class="pad_left sheet_type">
-						<h2><?php echo 'Daily Status Report'; ?></h2>
+						<h2><?php echo 'Daily Status Report for '; ?><span><?php echo $timeLabel[$time]; ?></span></h2>
 					</div>
 					<div class="pad_left project_member">
 						<h2><?php echo 'Hitesh Pachpor'; ?></h2>
